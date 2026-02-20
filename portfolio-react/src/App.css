@@ -1,0 +1,472 @@
+/* ========================================
+   Global Styles & Reset
+======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #00aced;
+  --primary-dark: #0077a3;
+  --secondary-color: #1c1c1c;
+  --bg-color: #f4f6f9;
+  --text-color: #333;
+  --text-light: #666;
+  --white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ========================================
+   App Container
+======================================== */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ========================================
+   Sidebar (Profile Section)
+======================================== */
+.sidebar {
+  width: 320px;
+  background: linear-gradient(180deg, var(--secondary-color) 0%, #2d2d2d 100%);
+  color: var(--white);
+  padding: 50px 30px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  margin-bottom: 25px;
+  transition: var(--transition);
+  box-shadow: 0 8px 25px rgba(0, 172, 237, 0.3);
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 172, 237, 0.5);
+}
+
+.sidebar h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.social-links {
+  margin-bottom: 30px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 8px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 1px solid var(--primary-color);
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+/* Resume Buttons */
+.resume {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resume .btn {
+  display: block;
+  padding: 14px 24px;
+  background: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.resume .btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 172, 237, 0.4);
+}
+
+.resume .btn:first-child {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+}
+
+.resume .btn:first-child:hover {
+  background: var(--primary-color);
+}
+
+/* ========================================
+   Main Content Area
+======================================== */
+.content {
+  flex: 1;
+  padding: 50px 60px;
+  max-width: 900px;
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 50px;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--secondary-color);
+  border-bottom: 3px solid var(--primary-color);
+  display: inline-block;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+}
+
+/* ========================================
+   Experience Timeline
+======================================== */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.timeline-item {
+  margin-bottom: 35px;
+  position: relative;
+  background: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.timeline-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -38px;
+  top: 30px;
+  width: 18px;
+  height: 18px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+.timeline-item h3 {
+  margin: 0 0 8px 0;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.timeline-item .role {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.timeline-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline-item ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.timeline-item ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* ========================================
+   Projects Grid
+======================================== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  margin: 10px 0;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.project-card p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   Skills Badges
+======================================== */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-badge {
+  background: var(--white);
+  border: 2px solid #e0e0e0;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.skill-badge:hover {
+  border-color: var(--primary-color);
+  background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 172, 237, 0.2);
+}
+
+/* ========================================
+   Contact Section
+======================================== */
+.contact {
+  margin-top: 50px;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #2d2d2d 100%);
+  color: var(--white);
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.contact h2 {
+  color: var(--white);
+  border-bottom-color: var(--primary-color);
+}
+
+.contact-info {
+  margin-bottom: 25px;
+}
+
+.contact-info p {
+  margin: 12px 0;
+  font-size: 1.1rem;
+}
+
+.contact a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin: 25px 0;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 8px 15px;
+  padding: 10px 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+  color: var(--primary-color) !important;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.social-icon:hover {
+  background: var(--primary-color);
+  color: var(--white) !important;
+  transform: translateY(-3px);
+}
+
+.copyright {
+  margin-top: 25px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   Responsive Design
+======================================== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 280px;
+    padding: 40px 25px;
+  }
+  
+  .content {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 40px 30px;
+  }
+  
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .content {
+    padding: 30px 20px;
+  }
+  
+  section h2 {
+    font-size: 1.6rem;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skill-list {
+    justify-content: center;
+  }
+  
+  .timeline {
+    padding-left: 25px;
+  }
+  
+  .timeline-item {
+    padding: 20px;
+  }
+  
+  .timeline-item::before {
+    left: -32px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* ========================================
+   Animations
+======================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline-item,
+.project-card,
+.skill-badge {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.3s; }
+.project-card:nth-child(3) { animation-delay: 0.4s; }
