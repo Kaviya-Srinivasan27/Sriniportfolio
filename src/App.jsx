@@ -1,6 +1,6 @@
 import React from 'react';
 import { resumeData } from './constants/data'; // <-- Fixed path
-import Contact from './pages/contact';         // <-- Fixed path
+import Contact from "./pages/Contact.jsx";         // <-- Fixed path
 import './App.css';
 
 const App = () => {
